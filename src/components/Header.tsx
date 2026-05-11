@@ -26,7 +26,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-parchment/90 dark:bg-obsidian/90 backdrop-blur-2xl border-b border-ghost-border-light dark:border-ghost-border"
+          ? "bg-parchment/90 dark:bg-obsidian/90 backdrop-blur-2xl dark:border-ghost-border"
           : "bg-transparent"
       }`}
     >

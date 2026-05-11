@@ -126,6 +126,60 @@ body::before {
   transform: translateY(-2px);
 }
 
+/* ===== BRAILLE DISSOLVE LOADING ===== */
+
+@keyframes braille-dissolve {
+  0.00% { content: "□········"; }
+  2.86% { content: "□········"; }
+  5.71% { content: "□········"; }
+  8.57% { content: "■□·······"; }
+  11.43% { content: "■□·······"; }
+  14.29% { content: "■□·······"; }
+  17.14% { content: "■■□······"; }
+  20.00% { content: "■■□······"; }
+  22.86% { content: "■■□······"; }
+  25.71% { content: "■■■□·····"; }
+  28.57% { content: "■■■□·····"; }
+  31.43% { content: "■■■□·····"; }
+  34.29% { content: "■■■■□····"; }
+  37.14% { content: "■■■■□····"; }
+  40.00% { content: "■■■■□····"; }
+  42.86% { content: "■■■■■□···"; }
+  45.71% { content: "■■■■■□···"; }
+  48.57% { content: "■■■■■□···"; }
+  51.43% { content: "■■■■■■□··"; }
+  54.29% { content: "■■■■■■□··"; }
+  57.14% { content: "■■■■■■□··"; }
+  60.00% { content: "■■■■■■■□·"; }
+  62.86% { content: "■■■■■■■□·"; }
+  65.71% { content: "■■■■■■■□·"; }
+  68.57% { content: "■■■■■■■■□"; }
+  71.43% { content: "■■■■■■■■□"; }
+  74.29% { content: "■■■■■■■■□"; }
+  77.14% { content: "■■■■■■■■■"; }
+  80.00% { content: "■■■■■■■■■"; }
+  82.86% { content: "■■■■■■■■■"; }
+  85.71% { content: "■■■■■■■■■"; }
+  88.57% { content: "■■■■■■■■■"; }
+  91.43% { content: "■■■■■■■■■"; }
+  94.29% { content: "■■■■■■■■■"; }
+  97.14% { content: "■■■■■■■■■"; }
+  100% { content: "□········"; }
+}
+
+.braille-dissolve::before {
+  content: "⣿⣿⣿⣿⣿⣿⣿⣿⣿";
+  display: inline-block;
+  min-width: 9ch;
+  max-width: 9ch;
+  white-space: pre-wrap;
+  line-height: 1;
+  letter-spacing: 0px;
+  font-family: var(--font-mono), monospace;
+  font-size: 1.5rem;
+  animation: braille-dissolve 3600ms steps(1) infinite;
+}
+
 /* ===== ANIMATIONS ===== */
 
 @keyframes reveal-up {
