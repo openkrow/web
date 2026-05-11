@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "OpenKrow - Your AI Desktop Companion",
     description: "Open-source AI agent that lives on your desktop.",
-    url: "https://openkrow.github.io/openkrow/",
+    url: "https://openkrow.github.io/web/",
     siteName: "OpenKrow",
     type: "website",
   },
