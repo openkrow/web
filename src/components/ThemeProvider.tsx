@@ -35,23 +35,16 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!mounted) return;
     const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
+    root.classList.remove("dark", "light");
+    root.classList.add(theme);
     localStorage.setItem("openkrow-theme", theme);
   }, [theme, mounted]);
 
   const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
 
-  if (!mounted) {
-    return <div className="dark">{children}</div>;
-  }
-
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      <div className={!mounted ? "dark" : undefined}>{children}</div>
     </ThemeContext.Provider>
   );
 }

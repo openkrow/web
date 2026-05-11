@@ -1,96 +1,166 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 export function Hero() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 100);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
-    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden">
-      {/* Background gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px]" />
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-accent/10 blur-[120px]" />
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Atmospheric background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-ember/[0.03] dark:bg-ember/[0.05] blur-[150px]" />
+        <div
+          className="absolute inset-0 opacity-[0.025] dark:opacity-[0.035]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(26,23,18,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(26,23,18,0.3) 1px, transparent 1px)`,
+            backgroundSize: "80px 80px",
+          }}
+        />
+        <div className="absolute top-0 right-[15%] w-px h-[40%] bg-gradient-to-b from-transparent via-ember/15 to-transparent" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-sm font-medium text-primary mb-8">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-          </span>
-          Open Source &middot; Free Forever
-        </div>
-
-        {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-          Your AI Desktop
-          <br />
-          <span className="gradient-text">Companion</span>
-        </h1>
-
-        {/* Subheading */}
-        <p className="mx-auto max-w-2xl text-lg sm:text-xl text-light-text-muted dark:text-dark-text-muted leading-relaxed mb-10">
-          OpenKrow is an open-source AI agent that lives on your desktop. It helps with office tasks, research, study, and everyday productivity.{" "}
-          <span className="text-light-text dark:text-dark-text font-medium">
-            The open-source alternative to Claude Cowork.
-          </span>
-        </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#download"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-primary-light text-white font-semibold text-base shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.02] transition-all duration-200"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-            Download for Free
-          </a>
-          <a
-            href="https://github.com/openkrow/openkrow"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-light-border dark:border-dark-border font-semibold text-base hover:bg-light-surface-2 dark:hover:bg-dark-surface-2 transition-all duration-200"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-            </svg>
-            View on GitHub
-          </a>
-        </div>
-
-        {/* Terminal preview */}
-        <div className="mt-16 mx-auto max-w-3xl">
-          <div className="glow rounded-2xl border border-light-border dark:border-dark-border bg-light-surface dark:bg-dark-surface overflow-hidden">
-            {/* Terminal header */}
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-light-border dark:border-dark-border bg-light-surface-2 dark:bg-dark-surface-2">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
-              </div>
-              <span className="text-xs font-mono text-light-text-muted dark:text-dark-text-muted ml-2">OpenKrow</span>
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8 pt-28 pb-16 sm:pt-36 sm:pb-24 w-full">
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
+          {/* Left: Story */}
+          <div>
+            {/* Hook - start in the middle of action */}
+            <div className={`mb-8 ${visible ? "animate-reveal" : "opacity-0"}`}>
+              <span className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-ember/20 bg-ember/[0.06] text-[13px] font-medium ember-text">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ember opacity-75" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-ember" />
+                </span>
+                Free &middot; Open Source &middot; MIT License
+              </span>
             </div>
-            {/* Terminal body */}
-            <div className="p-6 font-mono text-sm leading-7 text-left">
-              <div className="text-light-text-muted dark:text-dark-text-muted">
-                <span className="text-primary">krow</span>
-                <span className="text-accent"> &gt;</span> Summarize the Q3 sales report and create a presentation
+
+            {/* Headline: Problem-first, not product-first */}
+            <h1 className={`font-display font-extrabold tracking-[-0.03em] leading-[1.05] mb-6 ${visible ? "animate-reveal delay-1" : "opacity-0"}`}>
+              <span className="block text-3xl sm:text-4xl md:text-5xl text-ink dark:text-[#C8C2B6]">
+                Stop switching between
+              </span>
+              <span className="block text-3xl sm:text-4xl md:text-5xl text-ink dark:text-[#C8C2B6] mt-1">
+                10 tabs to get
+              </span>
+              <span className="block text-3xl sm:text-4xl md:text-5xl ember-text ember-glow mt-1">
+                one thing done.
+              </span>
+            </h1>
+
+            {/* Story: Customer is the hero */}
+            <p className={`text-base sm:text-lg leading-relaxed text-ink-muted dark:text-[#8A8274] mb-8 max-w-lg ${visible ? "animate-reveal delay-3" : "opacity-0"}`}>
+              OpenKrow is an AI agent that sits right on your desktop. Ask it to draft reports, research topics, summarize documents, or write code &mdash; in natural language. It works alongside you, not in another browser tab.
+            </p>
+
+            {/* CTAs */}
+            <div className={`flex flex-wrap items-center gap-4 ${visible ? "animate-reveal delay-4" : "opacity-0"}`}>
+              <a
+                href="#download"
+                className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-ember text-obsidian font-display font-semibold text-sm tracking-wide hover:bg-ember-light transition-all duration-300 shadow-[0_0_30px_rgba(229,164,17,0.15)] hover:shadow-[0_0_50px_rgba(229,164,17,0.25)]"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download Free
+              </a>
+              <a
+                href="#use-cases"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-ghost-border-light dark:border-ghost-border text-sm font-medium text-ink-muted dark:text-obsidian-500 hover:text-ink dark:hover:text-[#C8C2B6] hover:border-ember/30 transition-all duration-300"
+              >
+                See how it works
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Trust signals */}
+            <div className={`flex items-center gap-6 mt-10 ${visible ? "animate-reveal delay-5" : "opacity-0"}`}>
+              <div className="flex items-center gap-2 text-[13px] text-ink-faint dark:text-obsidian-500">
+                <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                macOS, Windows, Linux
               </div>
-              <div className="mt-3 text-light-text dark:text-dark-text">
-                <span className="text-green-400">&#10003;</span> Reading Q3_Sales_Report.xlsx...
+              <div className="flex items-center gap-2 text-[13px] text-ink-faint dark:text-obsidian-500">
+                <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                Data stays on your machine
               </div>
-              <div className="text-light-text dark:text-dark-text">
-                <span className="text-green-400">&#10003;</span> Analyzing revenue trends across 4 regions...
+            </div>
+          </div>
+
+          {/* Right: Terminal demo - show don't tell */}
+          <div className={`${visible ? "animate-reveal delay-6" : "opacity-0"}`}>
+            <div className="relative glass-card rounded-2xl overflow-hidden">
+              {/* Scan line */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute w-full h-px bg-ember/10 animate-[line-scan_8s_linear_infinite]" />
               </div>
-              <div className="text-light-text dark:text-dark-text">
-                <span className="text-green-400">&#10003;</span> Generating executive summary with key insights...
+
+              {/* Header */}
+              <div className="flex items-center justify-between px-5 py-3 border-b border-ghost-border-light dark:border-ghost-border">
+                <div className="flex items-center gap-3">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-ink/10 dark:bg-white/10" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-ink/10 dark:bg-white/10" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-ink/10 dark:bg-white/10" />
+                  </div>
+                  <span className="font-mono text-[11px] tracking-wider text-ink-faint dark:text-obsidian-500">OpenKrow</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="font-mono text-[10px] text-ink-faint dark:text-obsidian-500 tracking-wider">LIVE</span>
+                </div>
               </div>
-              <div className="text-light-text dark:text-dark-text">
-                <span className="text-green-400">&#10003;</span> Creating presentation with 12 slides...
+
+              {/* Body - relatable Vietnamese professional scenario */}
+              <div className="p-5 sm:p-6 font-mono text-[13px] leading-7 text-left space-y-4">
+                <div className="text-ink-faint dark:text-obsidian-500">
+                  <span className="ember-text">krow</span>
+                  <span className="text-ink-muted dark:text-obsidian-400"> ~ </span>
+                  Summarize this meeting transcript and draft a follow-up email to the team
+                </div>
+                <div className="space-y-1">
+                  <div className="text-ink dark:text-[#C8C2B6]/80">
+                    <span className="text-emerald-500 mr-2">+</span>
+                    Reading meeting_notes_may.docx
+                  </div>
+                  <div className="text-ink dark:text-[#C8C2B6]/80">
+                    <span className="text-emerald-500 mr-2">+</span>
+                    Extracting 5 action items and 3 decisions
+                  </div>
+                  <div className="text-ink dark:text-[#C8C2B6]/80">
+                    <span className="text-emerald-500 mr-2">+</span>
+                    Drafting follow-up email with summary
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 pt-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <span className="text-ink dark:text-[#C8C2B6]">
+                    Done &mdash; email draft saved and ready to send
+                  </span>
+                </div>
+                <div className="text-ink-faint dark:text-obsidian-500 pt-1">
+                  <span className="ember-text">krow</span>
+                  <span className="text-ink-muted dark:text-obsidian-400"> ~ </span>
+                  <span className="inline-block w-2 h-4 bg-ember/60 animate-cursor ml-0.5" />
+                </div>
               </div>
-              <div className="mt-3 text-primary">
-                Done! Presentation saved to ~/Documents/Q3_Summary.pptx
-              </div>
+            </div>
+
+            {/* Floating label */}
+            <div className="mt-4 text-center">
+              <span className="text-[12px] text-ink-faint dark:text-obsidian-500">
+                Real interaction &mdash; not a mockup
+              </span>
             </div>
           </div>
         </div>

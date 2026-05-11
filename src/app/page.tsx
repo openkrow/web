@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { UseCases } from "@/components/UseCases";
 import { Features } from "@/components/Features";
 import { HowItWorks } from "@/components/HowItWorks";
 import { OpenSource } from "@/components/OpenSource";
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <UseCases />
         <Features />
         <HowItWorks />
         <OpenSource />
