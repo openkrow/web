@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-primary: #6C3AED;
+  --color-primary-light: #8B5CF6;
+  --color-primary-dark: #5B21B6;
+  --color-accent: #06B6D4;
+  --color-accent-light: #22D3EE;
+
+  --color-dark-bg: #0A0A0F;
+  --color-dark-surface: #141420;
+  --color-dark-surface-2: #1E1E2E;
+  --color-dark-border: #2A2A3C;
+  --color-dark-text: #E2E8F0;
+  --color-dark-text-muted: #94A3B8;
+
+  --color-light-bg: #FAFAFA;
+  --color-light-surface: #FFFFFF;
+  --color-light-surface-2: #F1F5F9;
+  --color-light-border: #E2E8F0;
+  --color-light-text: #1E293B;
+  --color-light-text-muted: #64748B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode defaults */
+body {
+  background-color: var(--color-light-bg);
+  color: var(--color-light-text);
+}
+
+.dark body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 40px rgba(108, 58, 237, 0.15);
+}
+
+.dark .glow {
+  box-shadow: 0 0 60px rgba(108, 58, 237, 0.25);
+}
+
+/* Animated gradient border */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
