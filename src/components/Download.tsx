@@ -53,7 +53,7 @@ export function Download() {
           {platforms.map((platform) => (
             <a
               key={platform.name}
-              href="https://github.com/openkrow/openkrow/releases"
+              href="https://github.com/openkrow/openkrow/releases/latest"
               target="_blank"
               rel="noopener noreferrer"
               className="group glass-card ember-border rounded-2xl p-7 flex flex-col items-center text-center transition-all duration-300"

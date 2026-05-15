@@ -27,12 +27,17 @@ export const metadata: Metadata = {
   description:
     "Open-source AI agent that lives on your desktop. Helps with office tasks, research, study, and everyday productivity. The open-source Claude Cowork alternative.",
   keywords: ["AI agent", "desktop AI", "open source", "productivity", "Claude Cowork alternative"],
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "OpenKrow - Your AI Desktop Companion",
     description: "Open-source AI agent that lives on your desktop.",
     url: "https://openkrow.github.io/web/",
     siteName: "OpenKrow",
     type: "website",
+    images: ["/logo.png"],
   },
 };
 
