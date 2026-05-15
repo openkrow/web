@@ -19,7 +19,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-[#0A0A0A] grid-background-dark">
+    <footer className="bg-[#0A0A0A]">
       <div className="max-w-[1200px] mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Brand */}
@@ -36,7 +36,7 @@ export function Footer() {
           <div className="md:col-span-8 grid grid-cols-3 gap-8">
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title}>
-                <h4 className="text-sm font-semibold text-white mb-4">{title}</h4>
+                <p className="text-sm font-semibold text-white mb-4">{title}</p>
                 <ul className="space-y-2.5">
                   {links.map((link) => (
                     <li key={link.label}>

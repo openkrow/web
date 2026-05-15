@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <>
       {/* Announcement Banner */}
-      <div className="w-full border-b border-dashed border-[#cecec9] grid-background">
+      <div className="w-full border-b border-dashed border-[#cecec9]">
         <div className="max-w-[1200px] mx-auto px-6 py-2.5 text-center text-sm text-[#475569]">
           OpenKrow v1.0 is now available &mdash;{" "}
           <a

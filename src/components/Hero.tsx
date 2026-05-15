@@ -33,32 +33,22 @@ export function Hero() {
                 OpenKrow is a free, open-source AI agent that lives on your desktop. Draft reports, research topics, summarize documents, or automate tasks &mdash; all locally and privately.
               </p>
 
-              {/* Install command */}
-              <div
-                className={`inline-flex items-center gap-3 bg-[#0A0A0A] text-white px-5 py-3 rounded-none font-mono text-sm mb-6 ${
-                  visible ? "animate-fade-in-up delay-2" : "opacity-0"
-                }`}
-              >
-                <span className="text-[#94A3B8]">$</span>
-                <span>brew install openkrow</span>
-                <button
-                  className="ml-4 text-[#94A3B8] hover:text-white transition-colors"
-                  onClick={() => navigator.clipboard.writeText("brew install openkrow")}
-                  aria-label="Copy command"
-                >
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                </button>
-              </div>
-
-              {/* CTA */}
-              <div className={`${visible ? "animate-fade-in-up delay-3" : "opacity-0"}`}>
+              {/* CTAs */}
+              <div className={`flex flex-wrap items-center gap-4 ${visible ? "animate-fade-in-up delay-2" : "opacity-0"}`}>
                 <a
                   href="#download"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0F172A] text-white font-medium text-sm hover:bg-[#1e293b] transition-colors"
+                >
+                  Download for Free
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                </a>
+                <a
+                  href="#features"
                   className="inline-flex items-center gap-2 text-[#fb923c] hover:text-[#f97316] font-medium text-sm transition-colors"
                 >
-                  Get Started
+                  See how it works
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -66,34 +56,50 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Right - Terminal Widget */}
+            {/* Right - App Window Mockup */}
             <div className={`lg:col-span-5 ${visible ? "animate-fade-in-up delay-2" : "opacity-0"}`}>
-              <div className="bg-[#181818] rounded-none border border-[#333] overflow-hidden shadow-2xl">
-                {/* Terminal header */}
-                <div className="flex items-center gap-2 px-4 py-3 border-b border-[#333]">
+              <div className="bg-white border border-[#e9e9e4] rounded-none overflow-hidden shadow-2xl">
+                {/* Window header */}
+                <div className="flex items-center gap-2 px-4 py-3 border-b border-[#e9e9e4] bg-[#fafafa]">
                   <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
                   <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
                   <div className="w-3 h-3 rounded-full bg-[#28c840]" />
-                  <span className="ml-3 font-mono text-xs text-[#666]">openkrow</span>
+                  <span className="ml-3 text-xs text-[#94A3B8] font-mono">OpenKrow</span>
                 </div>
-                {/* Terminal body */}
-                <div className="p-5 font-mono text-sm leading-7 text-white">
-                  <div>
-                    <span className="text-[#fb923c]">$</span>{" "}
-                    <span className="text-[#E2E8F0]">krow &quot;Summarize this PDF and list action items&quot;</span>
+                {/* App body */}
+                <div className="p-5 space-y-4">
+                  {/* User message */}
+                  <div className="flex gap-3 items-start">
+                    <div className="w-7 h-7 bg-[#f1f5f9] flex items-center justify-center text-xs font-bold text-[#475569] shrink-0">Y</div>
+                    <div className="bg-[#f8fafc] border border-[#e9e9e4] px-4 py-2.5 text-sm text-[#0F172A]">
+                      Summarize this PDF and list the action items
+                    </div>
                   </div>
-                  <div className="mt-3 space-y-1 text-[#94A3B8]">
-                    <div><span className="text-[#28c840]">+</span> Reading quarterly_report.pdf</div>
-                    <div><span className="text-[#28c840]">+</span> Extracting key findings and action items</div>
-                    <div><span className="text-[#28c840]">+</span> Generating summary with 4 action items</div>
+                  {/* Agent response */}
+                  <div className="flex gap-3 items-start">
+                    <div className="w-7 h-7 bg-[#fb923c]/10 flex items-center justify-center text-xs font-bold text-[#fb923c] shrink-0">K</div>
+                    <div className="space-y-2 text-sm text-[#475569]">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[#28c840]">&#10003;</span>
+                        Reading quarterly_report.pdf
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[#28c840]">&#10003;</span>
+                        Extracting key findings
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[#28c840]">&#10003;</span>
+                        4 action items identified
+                      </div>
+                      <div className="mt-2 px-3 py-2 bg-[#f8fafc] border border-[#e9e9e4] text-xs text-[#475569]">
+                        Summary saved to ~/Desktop/summary.md
+                      </div>
+                    </div>
                   </div>
-                  <div className="mt-3">
-                    <span className="text-[#28c840]">Done</span>
-                    <span className="text-[#666]"> &mdash; summary saved to ~/Desktop/summary.md</span>
-                  </div>
-                  <div className="mt-2">
-                    <span className="text-[#fb923c]">$</span>{" "}
-                    <span className="inline-block w-2 h-5 bg-[#fb923c]/60 animate-cursor" />
+                  {/* Input bar */}
+                  <div className="flex items-center gap-2 border border-[#e9e9e4] px-3 py-2 mt-2">
+                    <span className="text-sm text-[#94A3B8] flex-1">Ask OpenKrow anything...</span>
+                    <div className="w-2 h-4 bg-[#fb923c]/60 animate-cursor" />
                   </div>
                 </div>
               </div>

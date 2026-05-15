@@ -5,13 +5,7 @@ const features = [
     title: "Works with Your Files",
     description:
       "Point OpenKrow at PDFs, Word docs, spreadsheets, or code. It reads, understands, and acts on your local files without uploading them anywhere.",
-    terminal: [
-      '$ krow "Review this contract and flag risky clauses"',
-      "+ Reading contract_v2.docx",
-      "+ Analyzing 24 clauses for risk factors",
-      "+ Found 3 clauses needing attention",
-      "Done — report saved to ~/Desktop/review.md",
-    ],
+    steps: ["Reading contract_v2.docx", "Analyzing 24 clauses for risk factors", "Found 3 clauses needing attention", "Report saved to ~/Desktop/review.md"],
     link: { label: "Learn More", href: "#download" },
     layout: "text-left",
   },
@@ -19,13 +13,7 @@ const features = [
     title: "Natural Language Interface",
     description:
       "No complex prompts or config files. Just tell OpenKrow what you need in plain English. It figures out the rest — file access, multi-step reasoning, and output formatting.",
-    terminal: [
-      '$ krow "Find all TODOs in my project and create a prioritized list"',
-      "+ Scanning 142 files in ~/projects/webapp",
-      "+ Found 23 TODO comments across 11 files",
-      "+ Categorizing by urgency and effort",
-      "Done — todo_list.md created with priority matrix",
-    ],
+    steps: ["Scanning 142 files in ~/projects/webapp", "Found 23 TODO comments across 11 files", "Categorizing by urgency and effort", "todo_list.md created with priority matrix"],
     link: { label: "Learn More", href: "#download" },
     layout: "text-right",
   },
@@ -33,13 +21,7 @@ const features = [
     title: "Bring Your Own AI",
     description:
       "Use OpenAI, Anthropic, Google, or any compatible API. Pick the right model for every task — a thinking model to plan, a fast model to execute, a large-context model for big files.",
-    terminal: [
-      "$ krow config models",
-      "  claude-4-sonnet  → planning, complex tasks",
-      "  gpt-4o-mini     → quick edits, formatting",
-      "  gemini-2.0      → large file analysis",
-      "Active: claude-4-sonnet",
-    ],
+    steps: ["claude-4-sonnet → planning, complex tasks", "gpt-4o-mini → quick edits, formatting", "gemini-2.0 → large file analysis"],
     link: { label: "Model Selection", href: "#download" },
     layout: "text-left",
     badges: ["OpenAI", "Anthropic", "Google", "Ollama"],
@@ -48,14 +30,7 @@ const features = [
     title: "100% Private, 100% Local",
     description:
       "Your data never leaves your machine. OpenKrow runs entirely on your desktop — no cloud sync, no telemetry, no accounts. You own everything.",
-    terminal: [
-      "$ krow status",
-      "  Runtime: local",
-      "  Data stored: ~/Library/OpenKrow/",
-      "  Cloud sync: disabled",
-      "  Telemetry: none",
-      "  License: MIT",
-    ],
+    steps: ["Runtime: local", "Cloud sync: disabled", "Telemetry: none", "License: MIT"],
     link: { label: "Privacy Details", href: "#download" },
     layout: "text-right",
   },
@@ -84,7 +59,7 @@ export function Features() {
             >
               {/* Text */}
               <div
-                className={`lg:col-span-4 ${
+                className={`lg:col-span-5 ${
                   feature.layout === "text-right" ? "lg:order-2" : "lg:order-1"
                 }`}
               >
@@ -117,30 +92,25 @@ export function Features() {
                 </a>
               </div>
 
-              {/* Terminal */}
+              {/* App window mockup */}
               <div
-                className={`lg:col-span-8 ${
+                className={`lg:col-span-7 ${
                   feature.layout === "text-right" ? "lg:order-1" : "lg:order-2"
                 }`}
               >
-                <div className="bg-[#181818] rounded-none border border-[#333] overflow-hidden">
-                  <div className="flex items-center gap-2 px-4 py-3 border-b border-[#333]">
-                    <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                    <div className="w-3 h-3 rounded-full bg-[#28c840]" />
+                <div className="bg-white border border-[#e9e9e4] rounded-none overflow-hidden shadow-lg">
+                  {/* Window chrome */}
+                  <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[#e9e9e4] bg-[#fafafa]">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
                   </div>
-                  <div className="p-5 font-mono text-sm leading-7">
-                    {feature.terminal.map((line, i) => (
-                      <div key={i} className={
-                        line.startsWith("$") ? "text-[#E2E8F0]" :
-                        line.startsWith("+") ? "text-[#94A3B8]" :
-                        line.startsWith("Done") ? "text-[#28c840]" :
-                        "text-[#666]"
-                      }>
-                        {line.startsWith("$") && <span className="text-[#fb923c]">$ </span>}
-                        {line.startsWith("+") && <span className="text-[#28c840]">+ </span>}
-                        {line.startsWith("$") ? line.slice(2) :
-                         line.startsWith("+") ? line.slice(2) : line}
+                  {/* Content */}
+                  <div className="p-5 space-y-2">
+                    {feature.steps.map((step, i) => (
+                      <div key={i} className="flex items-center gap-3 text-sm text-[#475569]">
+                        <span className="text-[#28c840] text-xs">&#10003;</span>
+                        <span>{step}</span>
                       </div>
                     ))}
                   </div>

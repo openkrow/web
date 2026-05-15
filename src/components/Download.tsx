@@ -42,12 +42,16 @@ export function Download() {
             ))}
           </div>
 
-          {/* Build from source */}
+          {/* Source link */}
           <div className="mt-10 text-center">
-            <p className="text-xs font-mono text-[#94A3B8] mb-2">Or build from source:</p>
-            <code className="inline-block bg-[#181818] text-[#E2E8F0] px-4 py-2 font-mono text-sm">
-              git clone https://github.com/openkrow/openkrow && cd openkrow && make
-            </code>
+            <a
+              href="https://github.com/openkrow/openkrow"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-[#94A3B8] hover:text-[#fb923c] transition-colors"
+            >
+              Or build from source on GitHub &rarr;
+            </a>
           </div>
         </div>
       </div>

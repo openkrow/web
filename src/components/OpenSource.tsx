@@ -10,12 +10,12 @@ const stats = [
 export function OpenSource() {
   return (
     <section className="bg-[#0A0A0A] border-y border-dashed border-[#cecec9]">
-      <div className="grid-background-dark">
+      <div>
         <div className="max-w-[1200px] mx-auto px-6 py-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <p className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Open Source
-            </h2>
+            </p>
             <p className="text-[#94A3B8] max-w-md mx-auto">
               Ask questions. Share feedback. Join the OpenKrow community.
             </p>
@@ -35,7 +35,7 @@ export function OpenSource() {
           {/* Stats grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#333]">
             {stats.map((stat) => (
-              <div key={stat.label} className="bg-[#0A0A0A] p-8 text-center grid-background-dark">
+              <div key={stat.label} className="bg-[#0A0A0A] p-8 text-center">
                 <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
                 <div className="text-xs font-mono uppercase tracking-wider text-[#94A3B8]">{stat.label}</div>
               </div>
