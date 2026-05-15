@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { DotPattern } from "@/components/DotPattern";
 
 export function Hero() {
   const [visible, setVisible] = useState(false);
@@ -11,8 +12,17 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative border-b border-dashed border-[#cecec9]">
-      <div className="grid-background">
+    <section className="border-b border-dashed border-[#cecec9]">
+      <DotPattern
+        className="min-h-[500px]"
+        dotSize={2}
+        gap={28}
+        baseColor="#d4d4d4"
+        glowColor="#fb923c"
+        proximity={140}
+        glowIntensity={1.2}
+        waveSpeed={0.4}
+      >
         <div className="max-w-[1200px] mx-auto px-6 py-20 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left - Text */}
@@ -106,7 +116,7 @@ export function Hero() {
             </div>
           </div>
         </div>
-      </div>
+      </DotPattern>
     </section>
   );
 }

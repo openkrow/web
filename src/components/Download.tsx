@@ -1,9 +1,19 @@
 "use client";
 
+import { DotPattern } from "@/components/DotPattern";
+
 export function Download() {
   return (
     <section id="download" className="border-b border-dashed border-[#cecec9]">
-      <div className="grid-background">
+      <DotPattern
+        dotSize={2}
+        gap={28}
+        baseColor="#d4d4d4"
+        glowColor="#fb923c"
+        proximity={120}
+        glowIntensity={1}
+        waveSpeed={0.3}
+      >
         <div className="max-w-[1200px] mx-auto px-6 py-20">
           <div className="text-center mb-12">
             <h2 className="font-mono text-xs uppercase tracking-wider text-[#fb923c] mb-4">
@@ -54,7 +64,7 @@ export function Download() {
             </a>
           </div>
         </div>
-      </div>
+      </DotPattern>
     </section>
   );
 }

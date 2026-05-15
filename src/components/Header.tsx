@@ -28,7 +28,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <span className="text-xl font-semibold text-[#0F172A]">
+            <span className="text-2xl font-semibold text-[#0F172A]">
               Open<span className="text-[#fb923c]">Krow</span>
             </span>
           </a>
