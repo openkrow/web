@@ -1,5 +1,7 @@
 "use client";
 
+import { KrowLogo } from "@/components/KrowLogo";
+
 const footerLinks = {
   Developers: [
     { label: "Documentation", href: "https://github.com/openkrow/openkrow/wiki" },
@@ -24,9 +26,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Brand */}
           <div className="md:col-span-4">
-            <span className="text-xl font-semibold text-white">
-              Open<span className="text-[#fb923c]">Krow</span>
-            </span>
+            <div className="flex items-center gap-2.5 mb-3">
+              <KrowLogo className="w-6 h-6 text-white" />
+              <span className="text-xl font-semibold text-white">
+                Open<span className="text-[#fb923c]">Krow</span>
+              </span>
+            </div>
             <p className="text-sm text-[#94A3B8] mt-3 leading-relaxed">
               Free, open-source AI desktop agent. Works locally, stays private.
             </p>

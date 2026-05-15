@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     "OpenKrow is a free, open-source AI desktop agent. Draft reports, research topics, summarize documents, or automate tasks — all locally and privately.",
   keywords: ["AI agent", "desktop AI", "open source", "productivity", "Claude Cowork alternative", "AI desktop companion"],
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   openGraph: {
     title: "OpenKrow - Your AI Desktop Companion",

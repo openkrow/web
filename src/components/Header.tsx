@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { KrowLogo } from "@/components/KrowLogo";
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -27,8 +28,9 @@ export function Header() {
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <span className="text-2xl font-semibold text-[#0F172A]">
+          <a href="#" className="flex items-center gap-2.5">
+            <KrowLogo className="w-7 h-7 text-[#0F172A]" />
+            <span className="text-lg font-semibold text-[#0F172A]">
               Open<span className="text-[#fb923c]">Krow</span>
             </span>
           </a>
