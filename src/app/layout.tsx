@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import { JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Space_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -17,15 +23,15 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "OpenKrow - Your AI Desktop Companion",
   description:
-    "Open-source AI agent that lives on your desktop. Helps with office tasks, research, study, and everyday productivity. The open-source Claude Cowork alternative.",
-  keywords: ["AI agent", "desktop AI", "open source", "productivity", "Claude Cowork alternative"],
+    "OpenKrow is a free, open-source AI desktop agent. Draft reports, research topics, summarize documents, or automate tasks — all locally and privately.",
+  keywords: ["AI agent", "desktop AI", "open source", "productivity", "Claude Cowork alternative", "AI desktop companion"],
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
   },
   openGraph: {
     title: "OpenKrow - Your AI Desktop Companion",
-    description: "Open-source AI agent that lives on your desktop.",
+    description: "Free, open-source AI desktop agent. Works locally, stays private.",
     url: "https://openkrow.github.io/web/",
     siteName: "OpenKrow",
     type: "website",
@@ -41,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${jetbrainsMono.variable}`}
+      className={`${spaceGrotesk.variable} ${spaceMono.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen antialiased">
         {children}
