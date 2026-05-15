@@ -32,42 +32,37 @@ const platforms = [
 
 export function Download() {
   return (
-    <section id="download" className="py-20 sm:py-28 relative">
-      <div className="absolute inset-0 bg-parchment-100 dark:bg-obsidian-100 pointer-events-none" />
-
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-ember/[0.03] dark:bg-ember/[0.05] blur-[120px] pointer-events-none" />
-
-      <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
+    <section id="download" className="py-16 sm:py-24 relative">
+      <div className="max-w-[1200px] mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.03em] mb-4 text-ink dark:text-[#C8C2B6]">
-            Ready to try <span className="ember-text">OpenKrow</span>?
+          <h2 className="text-4xl sm:text-[48px] font-extrabold tracking-[-0.02em] text-white mb-4">
+            Ready to try <span className="text-[#F97316]">OpenKrow</span>?
           </h2>
-          <p className="text-ink-muted dark:text-[#8A8274] max-w-lg mx-auto text-base leading-relaxed">
+          <p className="text-[#A1A1AA] max-w-lg mx-auto">
             Download for free. No sign-up required. Start working smarter in minutes.
           </p>
         </div>
 
         {/* Platform cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-3xl mx-auto">
           {platforms.map((platform) => (
             <a
               key={platform.name}
               href="https://github.com/openkrow/openkrow/releases/latest"
               target="_blank"
               rel="noopener noreferrer"
-              className="group glass-card ember-border rounded-2xl p-7 flex flex-col items-center text-center transition-all duration-300"
+              className="group bg-[#0F0F0F] border border-[#1E1E1E] rounded-xl p-8 flex flex-col items-center text-center hover:border-[#2A2A2A] hover:-translate-y-0.5 transition-all duration-200"
             >
-              <div className="text-ink-muted dark:text-obsidian-500 group-hover:text-ember dark:group-hover:text-ember-light transition-colors duration-300 mb-4">
+              <div className="text-[#A1A1AA] group-hover:text-[#F97316] transition-colors duration-200 mb-4">
                 {platform.icon}
               </div>
-              <h3 className="font-display text-lg font-semibold mb-1 text-ink dark:text-[#C8C2B6]">
+              <h3 className="text-[18px] font-bold text-white mb-1">
                 {platform.name}
               </h3>
-              <p className="text-[12px] text-ink-faint dark:text-obsidian-500 mb-5 font-mono">
+              <p className="text-[12px] text-[#52525B] mb-5 font-mono">
                 {platform.detail}
               </p>
-              <span className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-ember text-obsidian font-display text-sm font-semibold group-hover:bg-ember-light transition-colors duration-300 shadow-[0_0_20px_rgba(229,164,17,0.1)] group-hover:shadow-[0_0_30px_rgba(229,164,17,0.2)]">
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black text-sm font-semibold rounded-lg group-hover:bg-[#E5E5E5] group-hover:scale-[1.02] transition-all duration-150 shadow-[0_0_60px_rgba(249,115,22,0.2)]">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
@@ -79,12 +74,10 @@ export function Download() {
 
         {/* Build from source */}
         <div className="mt-10 text-center">
-          <p className="text-sm text-ink-faint dark:text-obsidian-500 mb-3">
-            Prefer to build from source?
-          </p>
-          <div className="inline-block glass-card rounded-xl px-5 py-3">
-            <code className="font-mono text-[13px] text-ink-muted dark:text-[#8A8274]">
-              <span className="ember-text">$</span> git clone https://github.com/openkrow/openkrow && make build
+          <p className="text-sm text-[#52525B] mb-3">Prefer to build from source?</p>
+          <div className="inline-block bg-[#0D0D0D] border border-[#1E1E1E] rounded-lg px-5 py-3">
+            <code className="font-mono text-sm text-[#E2E8F0]">
+              <span className="text-[#22D3EE]">$</span> git clone https://github.com/openkrow/openkrow && make build
             </code>
           </div>
         </div>
