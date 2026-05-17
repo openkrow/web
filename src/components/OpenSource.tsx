@@ -2,7 +2,7 @@
 
 const stats = [
   { label: "Open Source", value: "100%" },
-  { label: "Platforms", value: "3+" },
+  { label: "Agents", value: "5" },
   { label: "Cost", value: "$0" },
   { label: "License", value: "MIT" },
 ];
@@ -13,11 +13,14 @@ export function OpenSource() {
       <div>
         <div className="max-w-[1200px] mx-auto px-6 py-20">
           <div className="text-center mb-12">
-            <p className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 className="font-mono text-xs uppercase tracking-wider text-[#fb923c] mb-4">
               Open Source
+            </h2>
+            <p className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Built in the open, for founders like you
             </p>
             <p className="text-[#94A3B8] max-w-md mx-auto">
-              Ask questions. Share feedback. Join the OpenKrow community.
+              No vendor lock-in. No subscription traps. Fork it, self-host it, make it yours. Join thousands of solo founders building the future of one-person companies.
             </p>
             <a
               href="https://discord.gg/openkrow"
@@ -25,7 +28,7 @@ export function OpenSource() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-6 px-6 py-3 border border-[#333] text-white text-sm font-medium hover:border-[#fb923c] hover:text-[#fb923c] transition-all"
             >
-              Join the Discord
+              Join the founder community
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

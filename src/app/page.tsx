@@ -41,14 +41,14 @@ export default function Home() {
       {/* Announcement Banner */}
       <div className="w-full border-b border-dashed border-[#cecec9]">
         <div className="max-w-[1200px] mx-auto px-6 py-2.5 text-center text-sm text-[#475569]">
-          OpenKrow v1.0 is now available &mdash;{" "}
+          5 AI agents. 1 desktop app. 0 employees needed. &mdash;{" "}
           <a
             href="https://github.com/openkrow/openkrow/releases"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#fb923c] hover:text-[#f97316] font-medium transition-colors"
           >
-            Learn more &rarr;
+            Get early access &rarr;
           </a>
         </div>
       </div>

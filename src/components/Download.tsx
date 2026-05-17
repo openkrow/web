@@ -17,13 +17,13 @@ export function Download() {
         <div className="max-w-[1200px] mx-auto px-6 py-20">
           <div className="text-center mb-12">
             <h2 className="font-mono text-xs uppercase tracking-wider text-[#fb923c] mb-4">
-              Download
+              Get Started
             </h2>
             <p className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-3">
-              Get OpenKrow
+              Hire your AI team today
             </p>
             <p className="text-[#475569]">
-              Available on macOS, Windows, and Linux. Free forever.
+              Free. Open source. No sign-up required. Available on every platform.
             </p>
           </div>
 

@@ -21,17 +21,17 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OpenKrow - Your AI Desktop Companion",
+  title: "OpenKrow — 5 AI Agents for Solo Founders",
   description:
-    "OpenKrow is a free, open-source AI desktop agent. Draft reports, research topics, summarize documents, or automate tasks — all locally and privately.",
-  keywords: ["AI agent", "desktop AI", "open source", "productivity", "Claude Cowork alternative", "AI desktop companion"],
+    "The all-in-one AI team for 1-person startups. Marketing, Dev, Legal, Finance, and Operations agents — all in one desktop app. Free and open source.",
+  keywords: ["AI agent", "solo founder", "1-person startup", "open source", "solopreneur", "AI team", "startup tools", "indie hacker"],
   icons: {
     icon: "/favicon.svg",
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "OpenKrow - Your AI Desktop Companion",
-    description: "Free, open-source AI desktop agent. Works locally, stays private.",
+    title: "OpenKrow — 5 AI Agents for Solo Founders",
+    description: "Stop doing 5 jobs at once. OpenKrow gives solo founders an AI marketing, dev, legal, finance, and ops team — in one free desktop app.",
     url: "https://openkrow.github.io/web/",
     siteName: "OpenKrow",
     type: "website",
