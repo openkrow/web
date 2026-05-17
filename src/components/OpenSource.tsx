@@ -13,9 +13,9 @@ export function OpenSource() {
       <div>
         <div className="max-w-[1200px] mx-auto px-6 py-20">
           <div className="text-center mb-12">
-            <h2 className="font-mono text-xs uppercase tracking-wider text-[#fb923c] mb-4">
+            <p className="font-mono text-xs uppercase tracking-wider text-[#fb923c] mb-4">
               Open Source
-            </h2>
+            </p>
             <p className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Built in the open, for founders like you
             </p>
